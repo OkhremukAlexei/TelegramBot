@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.command.DuckCommand;
 import com.example.command.StartCommand;
 import org.telegram.telegrambots.bots.DefaultBotOptions;
 import org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot;
@@ -14,7 +15,10 @@ public class CrackerYtkaBot extends TelegramLongPollingCommandBot {
         super(defaultBotOptions);
 
         StartCommand startCommand = new StartCommand(this);
+        DuckCommand duckCommand = new DuckCommand();
+
         super.register(startCommand);
+        super.register(duckCommand);
     }
 
     @Override

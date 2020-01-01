@@ -9,9 +9,12 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 public class CrackerYtkaBot extends TelegramLongPollingCommandBot {
+
     public CrackerYtkaBot(DefaultBotOptions defaultBotOptions) {
         super(defaultBotOptions);
-        register(new StartCommand());
+
+        StartCommand startCommand = new StartCommand(this);
+        super.register(startCommand);
     }
 
     @Override

@@ -13,7 +13,6 @@ public class TelegramBotApp {
     public static void main(String[] args) throws TelegramApiRequestException {
         ApiContextInitializer.init();
         DefaultBotOptions botOptions = ApiContext.getInstance(DefaultBotOptions.class);
-
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
         telegramBotsApi.registerBot(new CrackerYtkaBot(botOptions));
 
